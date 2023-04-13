@@ -1,0 +1,40 @@
+body {
+    background-color: #F0FFFF;
+
+}
+
+#main-div {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+
+}
+
+header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#start-screen-div {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+#start-screen-div>h1 {
+    margin-bottom: 8vh;
+}
+
+#start-screen-div> select{
+    text-align: center;
+}
+
+#start-screen-div> input{
+    text-align: center;
+}
+
+#start-screen-div> button{
+    text-align: center;
+    margin-top: 20px;
+}
