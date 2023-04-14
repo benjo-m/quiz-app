@@ -1,11 +1,11 @@
 body {
     background-color: red;
-    background-image: url(public/bc.jpg);
+    background-image: url(src/assets/bc.jpg);
 }
 
 #main-div {
     display: flex;
-    flex-direction: column; /* set flex direction to column */
+    flex-direction: column;
     color: black;
 }
 
@@ -30,15 +30,15 @@ header {
     margin-bottom: 8vh;
 }
 
-#start-screen-div> select{
+#start-screen-div>select {
     text-align: center;
 }
 
-#start-screen-div> input{
+#start-screen-div>input {
     text-align: center;
 }
 
-#start-screen-div> button{
+#start-screen-div>button {
     text-align: center;
     margin-top: 20px;
 }
@@ -52,13 +52,12 @@ header {
     margin-top: 10%;
     height: 500px;
     display: flex;
-    flex-direction: column; /* set flex direction to column */
+    flex-direction: column;
     justify-content: center;
     border-radius: 10px;
-
 }
 
-#end-screen-div > button{
+#end-screen-div>button {
     width: 40%;
     margin: 0 auto;
     margin-top: 50px;
@@ -66,72 +65,58 @@ header {
 
 }
 
-
-
-
-
-
-/* CSS styles for the container div */
 .container {
-    width: 25% !important; /* set desired fixed width */
-    height: 500px; /* set desired height */
-    /* margin: auto; center horizontally and vertically */
+    width: 25% !important;
+    height: 500px;
     padding: 20px;
     border: none;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    overflow-y: auto; /* add scrollbar for vertical overflow */
+    overflow-y: auto;
     display: flex;
-    flex-direction: column; /* set flex direction to column */
-    justify-content: space-between; /* set content spacing to space-between */
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
     margin-top: 10%;
     background-color: rgb(231, 229, 229, 0.9);
     border-radius: 10px;
-  }
-  
-  /* CSS styles for the question */
-  .question {
+}
+
+.question {
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 20px;
-  }
-  
-  /* CSS styles for the answer divs */
-  .answer {
+}
+
+.answer {
     font-size: 16px;
     font-weight: 500;
-    margin-bottom: 15px; /* increase spacing between answer divs */
+    margin-bottom: 15px;
     padding: 10px;
     border: none;
     border-radius: 10px;
     transition: background-color 0.3s ease;
     cursor: pointer;
-    background-color: white; /* set desired background color */
+    background-color: white;
     border: 2px solid rgb(212, 209, 209)
-  }
-  
-  /* Hover effect for answer divs */
-  .answer:hover {
-    background-color: rgb(240, 238, 238); /* set desired background color */
+}
 
-  }
-  
-  /* CSS styles for the next button */
-  .next-button {
+.answer:hover {
+    background-color: rgb(240, 238, 238);
+}
+
+.next-button {
     width: 100%;
     padding: 10px;
     text-align: center;
-    background-color: #1e90ff; /* set desired background color */
+    background-color: #1e90ff;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-weight: 500;
-  }
-  
-  /* Optional: Hover effect for next button */
-  .next-button:hover {
-    background-color: #007bff; /* set desired hover background color */
-  }
-  
+}
+
+.next-button:hover {
+    background-color: #007bff;
+}
