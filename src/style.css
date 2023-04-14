@@ -17,6 +17,7 @@ header {
 #start-screen-div {
     text-align: center;
     width: 50%;
+    height: 500px;
     margin: 0 auto;
     margin-top: 10%;
     background-color: rgb(231, 229, 229, 0.9);
@@ -72,7 +73,7 @@ header {
 
 /* CSS styles for the container div */
 .container {
-    width: 500px !important; /* set desired fixed width */
+    width: 25% !important; /* set desired fixed width */
     height: 500px; /* set desired height */
     /* margin: auto; center horizontally and vertically */
     padding: 20px;
@@ -101,18 +102,17 @@ header {
     font-weight: 500;
     margin-bottom: 15px; /* increase spacing between answer divs */
     padding: 10px;
-    background-color: white; /* set desired background color */
     border: none;
     border-radius: 10px;
     transition: background-color 0.3s ease;
     cursor: pointer;
-    border: 2px solid rgb(196, 192, 192)
+    background-color: white; /* set desired background color */
+    border: 2px solid rgb(212, 209, 209)
   }
   
   /* Hover effect for answer divs */
   .answer:hover {
-    background-color: rgb(207, 204, 204); /* set desired background color */
-    border: 2px solid rgb(48, 47, 47)
+    background-color: rgb(240, 238, 238); /* set desired background color */
 
   }
   
