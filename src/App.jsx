@@ -5,6 +5,7 @@ import './style.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import Question from './components/Question'
 import EndScreen from './components/EndScreen'
+import { decodeHTMLEntities } from './utils/util.s'
 
 function App() {
   const [questions, setQuestions] = useState([])
@@ -17,13 +18,12 @@ function App() {
 
   function newGame() {
     setGameEnded(false)
-    gameStarted(false)
+    setGameStarted(false)
     setSelectedAnswers([])
     setQuestionNumber(0)
     setCorrect(0)
-    questions([])
+    setQuestions([])
   }
-
 
   function fetchData(numberOfQuestions, category, difficulty) {
     fetch(`https://opentdb.com/api.php?amount=${numberOfQuestions}&category=${category}&difficulty=${difficulty}`)
@@ -31,7 +31,7 @@ function App() {
       .then(data => {
         setQuestions(data.results)
 
-        let correctArr = data.results.map(ans => ans.correct_answer)
+        let correctArr = data.results.map(ans => decodeHTMLEntities(ans.correct_answer))
         setCorrectAnswers(correctArr)
       })
     setGameStarted(true)
@@ -84,7 +84,6 @@ function App() {
 
   return (
     <div id="main-div">
-      <Header />
       {gameStarted && !gameEnded &&
         <div className="questions-div">{qArr[questionNumber]}</div>}
       {!gameStarted && <StartScreen handleFetch={fetchData} />}

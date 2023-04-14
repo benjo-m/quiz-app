@@ -23,7 +23,7 @@ export default function StartScreen(props) {
     }
     return (
         <div id="start-screen-div">
-            <h1>Set up your quiz!</h1>
+            <h2>Set up your quiz!</h2>
             <label htmlFor="category" className="form-label">Select category</label><br />
             <select name="category" id="category" className="form-select" onChange={handleCategory}>
                 {categoriesArr}
@@ -42,7 +42,7 @@ export default function StartScreen(props) {
             <label htmlFor="number-of-qs" className="form-label">Number of questions</label><br />
             <input type="number" id="number-of-qs" defaultValue={5} min={1} className="form-control" onChange={handleQsNumber} />
 
-            <button className="btn btn-success" onClick={() => props.handleFetch(numberOfQs, category, difficulty)}>Start quiz</button>
+            <button className="btn btn-primary" onClick={() => props.handleFetch(numberOfQs, category, difficulty)}>Start quiz</button>
         </div>
     )
 }
