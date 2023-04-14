@@ -1,6 +1,6 @@
 body {
     background-color: red;
-    background-image: url(src/assets/bc.jpg);
+    background-image: url(./assets/bc.jpg);
 }
 
 #main-div {
