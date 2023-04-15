@@ -16,12 +16,16 @@ export default function App() {
   const [correct, setCorrect] = useState(0)
 
   function fetchData(numberOfQuestions, category, difficulty) {
-    fetch(`https://opentdb.com/api.php?type=multiple&amount=${numberOfQuestions}&category=${category}&difficulty=${difficulty}`)
-      .then(res => res.json())
-      .then(data => {
+    fetch(
+      `https://opentdb.com/api.php?type=multiple&amount=${numberOfQuestions}&category=${category}&difficulty=${difficulty}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
         setQuestions(data.results)
 
-        let correctArr = data.results.map(ans => decodeHTMLEntities(ans.correct_answer))
+        let correctArr = data.results.map((ans) =>
+          decodeHTMLEntities(ans.correct_answer)
+        )
         setCorrectAnswers(correctArr)
       })
     setGameStarted(true)
@@ -29,14 +33,18 @@ export default function App() {
 
   let qArr = []
   function createQuestionCards() {
-    let questionsArr = questions.map(question => {
-      return <Question
-        question={question}
-        handleClick={() => setQuestionNumber(prev => prev + 1)}
-        selectAnswer={selectAnswer}
-        pos={questionNumber}
-        numberOfQuestions={questions.length}
-        handleEnd={endGame} />
+    let questionsArr = questions.map((question) => {
+      return (
+        <Question
+          key={question.question}
+          question={question}
+          handleClick={() => setQuestionNumber((prev) => prev + 1)}
+          selectAnswer={selectAnswer}
+          pos={questionNumber}
+          numberOfQuestions={questions.length}
+          handleEnd={endGame}
+        />
+      )
     })
     return questionsArr
   }
@@ -54,8 +62,7 @@ export default function App() {
     let sum = 0
     if (questionNumber != 0 && questionNumber == questions.length - 1)
       for (let i = 0; i < correctAnswers.length; i++)
-        if (correctAnswers[i] == selectedAnswers[i])
-          sum++
+        if (correctAnswers[i] == selectedAnswers[i]) sum++
     setCorrect(sum)
     setGameEnded(true)
   }
@@ -71,10 +78,15 @@ export default function App() {
 
   return (
     <div id="main-div">
-      {gameStarted && !gameEnded &&
-        <div>{qArr[questionNumber]}</div>}
+      {gameStarted && !gameEnded && <div>{qArr[questionNumber]}</div>}
       {!gameStarted && <StartScreen handleFetch={fetchData} />}
-      {gameEnded && <EndScreen correct={correct} numberOfQuestions={questions.length} startNewQuiz={newGame} />}
+      {gameEnded && (
+        <EndScreen
+          correct={correct}
+          numberOfQuestions={questions.length}
+          startNewQuiz={newGame}
+        />
+      )}
     </div>
   )
 }

@@ -1,17 +1,21 @@
 export function shuffleArray(array) {
-    let currentIndex = array.length, randomIndex;
+  let currentIndex = array.length,
+    randomIndex
 
-    while (currentIndex != 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-    }
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex)
+    currentIndex--
+    ;[array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ]
+  }
 
-    return array;
+  return array
 }
 
 export function decodeHTMLEntities(text) {
-    var textArea = document.createElement('textarea');
-    textArea.innerHTML = text;
-    return textArea.value;
+  var textArea = document.createElement('textarea')
+  textArea.innerHTML = text
+  return textArea.value
 }
