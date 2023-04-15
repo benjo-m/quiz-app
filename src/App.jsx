@@ -77,7 +77,7 @@ export default function App() {
     setQuestions([])
   }
 
-  let override = {
+  let loaderStyle = {
     display: 'block',
     margin: '0 auto',
     borderColor: 'red',
@@ -97,7 +97,7 @@ export default function App() {
       )}
       <PulseLoader
         loading={questions.length == 0 && gameStarted}
-        cssOverride={override}
+        cssOverride={loaderStyle}
         color="white"
         size={20}
       />
