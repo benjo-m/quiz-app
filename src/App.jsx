@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import Question from './components/Question'
 import EndScreen from './components/EndScreen'
 import { decodeHTMLEntities } from './utils/util.s'
+import { PulseLoader } from 'react-spinners'
 
 export default function App() {
   const [questions, setQuestions] = useState([])
@@ -76,6 +77,13 @@ export default function App() {
     setQuestions([])
   }
 
+  let override = {
+    display: 'block',
+    margin: '0 auto',
+    borderColor: 'red',
+    marginTop: '20%',
+  }
+
   return (
     <div id="main-div">
       {gameStarted && !gameEnded && <div>{qArr[questionNumber]}</div>}
@@ -87,6 +95,12 @@ export default function App() {
           startNewQuiz={newGame}
         />
       )}
+      <PulseLoader
+        loading={questions.length == 0 && gameStarted}
+        cssOverride={override}
+        color="white"
+        size={20}
+      />
     </div>
   )
 }
