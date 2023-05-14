@@ -26,7 +26,7 @@ export default function StartScreen(props) {
   function handleDifficulty(event) {
     setQuizSettings((prevState) => ({
       ...prevState,
-      category: event.target.value,
+      difficulty: event.target.value,
     }))
   }
 
