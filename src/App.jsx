@@ -14,7 +14,6 @@ export default function App() {
   const [questionNumber, setQuestionNumber] = useState(0)
   const [correctAnswers, setCorrectAnswers] = useState([])
   const [selectedAnswers, setSelectedAnswers] = useState([])
-  const [correct, setCorrect] = useState(0)
 
   function fetchData(numberOfQuestions, category, difficulty) {
     fetch(
@@ -60,12 +59,8 @@ export default function App() {
   }
 
   function endGame() {
-    let sum = 0
     if (questionNumber != 0 && questionNumber == questions.length - 1)
-      for (let i = 0; i < correctAnswers.length; i++)
-        if (correctAnswers[i] == selectedAnswers[i]) sum++
-    setCorrect(sum)
-    setGameEnded(true)
+      setGameEnded(true)
   }
 
   function newGame() {
@@ -73,7 +68,6 @@ export default function App() {
     setGameStarted(false)
     setSelectedAnswers([])
     setQuestionNumber(0)
-    setCorrect(0)
     setQuestions([])
   }
 
@@ -84,14 +78,17 @@ export default function App() {
     marginTop: '20%',
   }
 
+  console.log(correctAnswers)
+  console.log(selectedAnswers)
+
   return (
     <div id="main-div">
       {gameStarted && !gameEnded && <div>{qArr[questionNumber]}</div>}
       {!gameStarted && <StartScreen handleFetch={fetchData} />}
       {gameEnded && (
         <EndScreen
-          correct={correct}
-          numberOfQuestions={questions.length}
+          yourAnswers={selectedAnswers}
+          correctAnswers={correctAnswers}
           startNewQuiz={newGame}
         />
       )}
